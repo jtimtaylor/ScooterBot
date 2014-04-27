@@ -108,7 +108,7 @@ def check_postings(rss):
             if new_post.title not in [x.title for x in postings_dict.values()]:
                 postings_dict[link] = new_post
                 new_post_list.append(new_post)
-            logging.info(u"New entry: {}".format(new_post.cute_title))
+                logging.info(u"New entry: {}".format(new_post.cute_title))
     if not len(new_post_list):
         logging.info("No new entries.")
     else:
@@ -116,7 +116,7 @@ def check_postings(rss):
     logging.info("Writing save file...")
     save_postings(postings_dict)
     logging.info("File saved...")
-    logging.info("Process complete")
+    logging.info("****** BATCH COMPLETE ******")
 
 def mail_results(new_post_list):
     if len(new_post_list) > 1:
